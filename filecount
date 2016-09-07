@@ -1,0 +1,7 @@
+#!/bin/bash
+
+x=`ls -a . | grep -c ^[[:print:]]`
+#list of files and directories - including hidden files - counted and recorded as variable x
+
+echo "The number of files and subdirectories in current directory = $x"
+#output message

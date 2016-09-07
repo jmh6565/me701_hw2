@@ -1,0 +1,34 @@
+#!/bin/bash
+
+filename=$1
+directory="trash"
+
+
+if [ -f "$filename" ]	
+#statement true if input file exists
+	then
+		x=`pwd`		
+		#records current directory
+		cd ~/		
+		#changes to home directory
+
+		if [ -d "$directory" ]   
+		#statement true if trash directory exists in home directory
+
+			then
+				cd $x  			
+				#changes directory back to original
+			else
+				mkdir trash		
+				#creates trash directory in home directory if it does not exists
+				cd $x			
+				#changes directory back to original
+		fi
+	
+		mv $filename ~/trash	
+		#moves input file to trash directory
+
+	else
+		echo "Error: $filename not found in this directory"	
+		#error message if the input file does not exits in the current directory
+fi
