@@ -5,8 +5,14 @@ read x
 #records Fahrenheit temperautre input - decimal values allowed
 
 x=`echo "scale=3; $x-32" | bc`
-x=`echo "scale=1; $x*5/9" | bc`
-#converts Fahrenheit to Celcius - output rounded down to nearest tenth of a degree
+x=`echo "scale=2; $x*5/9" | bc`
+#converts Fahrenheit to Celcius - output rounded down to nearest hundredth of a degree
 
 echo "Temperature equals $x degrees Celcius"
+#output message
+
+x=`echo "scale=2; $x+273.15" | bc`
+#converts Celcius to Kelvin
+
+echo "Temperature equals $x Kelvin"
 #output message
